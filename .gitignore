@@ -29,5 +29,6 @@ coverage
 
 *.tsbuildinfo
 
- ignore all .temp files
+# ignore all files
+
  *.temp
