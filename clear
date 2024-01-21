@@ -1,0 +1,23 @@
+[33mcommit fa798b1137c734b03a9f6d31b8bd010dc7371154[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: KCM <jun23.llagas@gmail.com>
+Date:   Sun Dec 31 19:03:34 2023 +0800
+
+    Updated src/components/__tests__/Login.spec.js with a new line
+
+[33mcommit cd079ce6632a5ab1ebbf2174870e99c3c42e046e[m
+Author: KCM <jun23.llagas@gmail.com>
+Date:   Sun Dec 31 18:59:26 2023 +0800
+
+    updated
+
+[33mcommit bdb5552c66c46a698ce20f2fe61bb9890a16d46e[m
+Author: KCM <jun23.llagas@gmail.com>
+Date:   Sun Dec 31 18:42:50 2023 +0800
+
+    Updated src/components/__test__/Login.spec.js
+
+[33mcommit 66e2af33d74c6c1e989364d4a0d88eca7f91e049[m
+Author: KCM <jun23.llagas@gmail.com>
+Date:   Sun Dec 31 18:25:32 2023 +0800
+
+    first release of my page-vue at login.spec.test

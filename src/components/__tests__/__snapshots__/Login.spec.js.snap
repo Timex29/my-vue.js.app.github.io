@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Login page > renders properly @timex 1`] = `
+{
+  "__file": "E:/timex-files/codes/vue-project-final/my-app-final/src/components/LoginView.vue",
+  "data": [Function],
+  "methods": {
+    "submit": [Function],
+  },
+  "render": [Function],
+}
+`;
