@@ -16,7 +16,7 @@ describe('Login page', () => {
     await wrapper.find('input[type=password]').setValue(password)
 
     await wrapper.find('form').trigger('submit.prevent')
-    //await wrapper.find('.link a')
+    await wrapper.find('.link a')
 
     expect(wrapper.emitted('submit')[0][0]).toStrictEqual({
       username,
