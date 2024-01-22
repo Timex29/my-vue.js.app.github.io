@@ -2,7 +2,7 @@
 
 exports[`Login page > renders properly @timex 1`] = `
 {
-  "__file": "E:/timex-files/codes/vue-project-final/my-app-final/src/components/LoginView.vue",
+  "__file": "F:/programs_installed/files/github-clone/my-vue.js.app.github.io/src/components/LoginView.vue",
   "data": [Function],
   "methods": {
     "submit": [Function],
