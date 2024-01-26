@@ -24,16 +24,8 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../components/LoginView.vue')
-    },
-
-    {
-      path: '/User-Registration',
-      name: 'Registration',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../components/Registration.vue')
     }
+
   ]
 })
 

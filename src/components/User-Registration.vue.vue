@@ -1,4 +1,4 @@
-<!-- filename: Login.vue -->
+<<!-- filename: User-Registration.vue -->
 <!-- ✓ GOOD -->
 <template>
   <div class="login">
@@ -17,8 +17,7 @@
 
           <span class="bi bi-lock-fill" style="font-size: 0.9rem" for="password"> Password</span>
           <i></i>
-        </div>
-        <div></div>
+        </div>        <div></div>
         <div class="links">
           <a href="#">Forgot Password?</a>
           <a> <input type="checkbox" onclick="myFunction()" /> Show/Hide </a>
@@ -59,3 +58,4 @@ export default {
   }
 }
 </script>
+>
