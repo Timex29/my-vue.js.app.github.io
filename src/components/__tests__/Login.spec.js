@@ -1,7 +1,7 @@
 import { describe, test, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 
-import LoginComponent from '../LoginView.vue'
+import LoginComponent from '../UserLogin.vue'
 
 describe('Login page', () => {
   test('renders properly @timex', async () => {
