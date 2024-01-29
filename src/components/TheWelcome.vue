@@ -1,88 +1,101 @@
-<script setup>
-import WelcomeItem from './WelcomeItem.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
-</script>
-
 <template>
-  <WelcomeItem>
-    <template #icon>
-      <DocumentationIcon />
-    </template>
-    <template #heading>Documentation</template>
+  <v-responsive class="d-flex align-center justify-center fill-heigth fluid">
+    <v-sheet class="mx-auto py-5" width="400" sm="8" md="4">
+      <v-card class="mx-auto py-5" max-width="400">
+        <div class="box">
+          <v-form v-model="form" @submit.prevent="onSubmit">
+            <v-card-title><h2>Sign in</h2></v-card-title>
+            <!--v-text-field-username-->
+            <div class="inputBox">
+              <v-text-field
+                v-model="Name"
+                :readonly="loading"
+                :rules="[required]"
+                label="Username"
+                variant="outlined"
+                clearable
+                prepend-inner-icon="mdi-account-outline"
+              ></v-text-field>
+              <i></i>
+            </div>
 
-    Vue’s
-    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
-    provides you with all information you need to get started.
-  </WelcomeItem>
+            <br />
 
-  <WelcomeItem>
-    <template #icon>
-      <ToolingIcon />
-    </template>
-    <template #heading>Tooling</template>
+            <div class="inputBox">
+              <!--v-text-field-password-->
+              <div class="input">
+                <v-text-field
+                  v-model="PassWord"
+                  :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
+                  :type="visible ? 'text' : 'password'"
+                  :readonly="loading"
+                  :rules="[required]"
+                  label="Password"
+                  variant="outlined"
+                  clearable
+                  prepend-inner-icon="mdi-lock-outline"
+                  @click:append-inner="visible = !visible"
+                ></v-text-field>
+                <i></i>
+              </div>
+            </div>
 
-    This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
-    recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
-    you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
-      >Cypress Component Testing</a
-    >.
+            <div
+              class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between links"
+            >
+              <a
+                class="text-caption text-decoration-none text-blue"
+                href="#"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Forgot login password?</a
+              >
+            </div>
 
-    <br />
+            <br />
 
-    More instructions are available in <code>README.md</code>.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <EcosystemIcon />
-    </template>
-    <template #heading>Ecosystem</template>
-
-    Get official tools and libraries for your project:
-    <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>,
-    <a href="https://router.vuejs.org/" target="_blank" rel="noopener">Vue Router</a>,
-    <a href="https://test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a>, and
-    <a href="https://github.com/vuejs/devtools" target="_blank" rel="noopener">Vue Dev Tools</a>. If
-    you need more resources, we suggest paying
-    <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">Awesome Vue</a>
-    a visit.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <CommunityIcon />
-    </template>
-    <template #heading>Community</template>
-
-    Got stuck? Ask your question on
-    <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Vue Land</a>, our official
-    Discord server, or
-    <a href="https://stackoverflow.com/questions/tagged/vue.js" target="_blank" rel="noopener"
-      >StackOverflow</a
-    >. You should also subscribe to
-    <a href="https://news.vuejs.org" target="_blank" rel="noopener">our mailing list</a> and follow
-    the official
-    <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">@vuejs</a>
-    twitter account for latest news in the Vue world.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <SupportIcon />
-    </template>
-    <template #heading>Support Vue</template>
-
-    As an independent project, Vue relies on community backing for its sustainability. You can help
-    us by
-    <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
-  </WelcomeItem>
+            <!--btn-submit-->
+            <v-btn
+              class="mb-4"
+              :disabled="!form"
+              :loading="loading"
+              block
+              color="success"
+              size="large"
+              type="submit"
+              variant="elevated"
+            >
+              Login
+            </v-btn>
+          </v-form>
+        </div>
+      </v-card>
+    </v-sheet>
+  </v-responsive>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    form: false,
+    Name: null,
+    PassWord: null,
+    loading: false,
+    visible: false
+  }),
+
+  methods: {
+    onSubmit() {
+      if (!this.form) return
+
+      this.loading = true
+
+      setTimeout(() => (this.loading = false), 2000)
+    },
+    required(v) {
+      return !!v || 'Field is required'
+    }
+  }
+}
+</script>
