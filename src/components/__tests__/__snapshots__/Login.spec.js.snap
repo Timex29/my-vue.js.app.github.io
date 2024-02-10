@@ -5,7 +5,44 @@ exports[`Login page > renders properly @timex 1`] = `
   "__file": "F:/programs_installed/files/github-clone/with-vuetify/my-vue.js.app.github.io/src/components/UserLogin.vue",
   "data": [Function],
   "methods": {
-    "submit": [Function],
+    "onSubmit": [Function],
+    "required": [Function],
+  },
+  "render": [Function],
+}
+`;
+
+exports[`Login page attributes > renders properly @timex 1`] = `
+{
+  "__file": "F:/programs_installed/files/github-clone/with-vuetify/my-vue.js.app.github.io/src/components/UserLogin.vue",
+  "data": [Function],
+  "methods": {
+    "onSubmit": [Function],
+    "required": [Function],
+  },
+  "render": [Function],
+}
+`;
+
+exports[`Login pageattri > renders properly @timex 1`] = `
+{
+  "__file": "F:/programs_installed/files/github-clone/with-vuetify/my-vue.js.app.github.io/src/components/UserLogin.vue",
+  "data": [Function],
+  "methods": {
+    "onSubmit": [Function],
+    "required": [Function],
+  },
+  "render": [Function],
+}
+`;
+
+exports[`Login pageattru > renders properly @timex 1`] = `
+{
+  "__file": "F:/programs_installed/files/github-clone/with-vuetify/my-vue.js.app.github.io/src/components/UserLogin.vue",
+  "data": [Function],
+  "methods": {
+    "onSubmit": [Function],
+    "required": [Function],
   },
   "render": [Function],
 }
