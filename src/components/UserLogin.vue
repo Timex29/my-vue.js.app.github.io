@@ -1,58 +1,100 @@
 <template>
-  <div class="login">
-    <div class="box">
-      <span class="borderLine"></span>
-      <form @submit.prevent="submit">
-        <h2>Sign in</h2>
-        <div class="inputBox">
-          <input type="text" required v-model="form.username" />
-          <span class="fas fa-user" style="font-size: 0.8rem"> Username</span>
-          <i></i>
-        </div>
+  <v-responsive class="d-flex align-center justify-center fill-heigth fluid">
+    <v-sheet class="mx-auto py-5" width="400" sm="8" md="4">
+      <v-card class="mx-auto py-5" max-width="400">
+        <div class="box">
+          <v-form v-model="form" @submit.prevent="onSubmit">
+            <v-card-title><h2>Sign in</h2></v-card-title>
+            <!--v-text-field-username-->
+            <div class="inputBox">
+              <v-text-field
+                v-model="Name"
+                :readonly="loading"
+                :rules="[required]"
+                label="Username"
+                variant="outlined"
+                clearable
+                prepend-inner-icon="mdi-account-outline"
+              ></v-text-field>
+              <i></i>
+            </div>
 
-        <div class="inputBox">
-          <input type="password" v-model="form.password" required id="myInput" />
+            <br />
 
-          <span class="bi bi-lock-fill" style="font-size: 0.9rem" for="password"> Password</span>
-          <i></i>
+            <div class="inputBox">
+              <!--v-text-field-password-->
+              <div class="input">
+                <v-text-field
+                  v-model="PassWord"
+                  :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
+                  :type="visible ? 'text' : 'password'"
+                  :readonly="loading"
+                  :rules="[required]"
+                  label="Password"
+                  variant="outlined"
+                  clearable
+                  prepend-inner-icon="mdi-lock-outline"
+                  @click:append-inner="visible = !visible"
+                ></v-text-field>
+                <i></i>
+              </div>
+            </div>
+
+            <div
+              class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between links"
+            >
+              <a
+                class="text-caption text-decoration-none text-blue"
+                href="#"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Forgot login password?</a
+              >
+            </div>
+
+            <br />
+
+            <!--btn-submit-->
+            <v-btn
+              class="mb-4"
+              :disabled="!form"
+              :loading="loading"
+              block
+              color="success"
+              size="large"
+              type="submit"
+              variant="elevated"
+            >
+              Login
+            </v-btn>
+          </v-form>
         </div>
-        <div></div>
-        <div class="links">
-          <a href="#">Forgot Password?</a>
-          <a> <input type="checkbox" onclick="myFunction()" /> Show/Hide </a>
-        </div>
-        <button type="submit" class="loginbox">Login</button>
-      </form>
-    </div>
-  </div>
+      </v-card>
+    </v-sheet>
+  </v-responsive>
 </template>
-<style>
-@media (min-width: 1024px) {
-  .login {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-.login {
-  margin-top: 40px;
-}
-</style>
 
-<!--this is a scirpt tag-->
 <script>
 export default {
-  data() {
-    return {
-      form: {
-        username: '',
-        password: ''
-      }
-    }
-  },
+  data: () => ({
+    form: false,
+    Name: null,
+    PassWord: null,
+    loading: false,
+    visible: false
+  }),
+
   methods: {
-    async submit() {
-      this.$emit('submit', this.form)
+    onSubmit() {
+      if (!this.form) return
+
+      this.loading = true
+
+      setTimeout(() => (this.loading = false), 2000)
+    },
+    required(v) {
+      return !!v || 'Field is required'
     }
   }
 }
