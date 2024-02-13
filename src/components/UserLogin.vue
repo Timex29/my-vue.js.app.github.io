@@ -65,6 +65,8 @@
               size="large"
               type="submit"
               variant="elevated"
+
+              data-type="submit"
             >
               Login
             </v-btn>
@@ -91,7 +93,7 @@ export default {
 
       this.loading = true
 
-      setTimeout(() => (this.loading = false), 2000)
+      setTimeout(() => (this.loading = false), 1000)
     },
     required(v) {
       return !!v || 'Field is required'

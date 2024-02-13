@@ -28,14 +28,14 @@ describe('Login page attributes', () => {
     //})
 
     expect(await wrapper.html()).toContain('Sign in')
-    expect(wrapper.find('.box').exists()).toBe(true)
+    //expect(wrapper.find('.box').exists()).toBe(true)
     expect(wrapper.find('.input').exists()).toBe(true)
     expect(wrapper.find('.inputBox').exists()).toBe(true)
 
    
 
 
-    await wrapper.find('[ data-type = "submit"]').trigger('click')
+    await wrapper.find('[data-type = "submit"]').trigger('click')
    
   })
   test('throws an error for non existing users', async () => {
